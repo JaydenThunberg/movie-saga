@@ -28,6 +28,7 @@ function* getMovies() {
     }
 }
 
+
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
 

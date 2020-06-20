@@ -1,6 +1,7 @@
 //this will be on the individual movie poster with an edit button
 import React, { Component } from 'react';
-
+import {connect } from 'react-redux';
+ 
 class Details extends Component {
   // Renders the entire Details on the DOM
   render() {
@@ -12,4 +13,6 @@ class Details extends Component {
   }//end render
 }// end class
 
-export default Details;
+const putReduxStateOnProps = (reduxState) => ({ reduxState });
+
+export default connect()(Details);
