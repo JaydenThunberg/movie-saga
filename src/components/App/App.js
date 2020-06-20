@@ -9,6 +9,10 @@ import Details from '../Details/Details';
 
 class App extends Component {
   // Renders the entire app on the DOM
+  componentDidMount() {
+    console.log('componentDidMount:')
+    this.props.dispatch({ type: 'GET_MOVIES' });
+  }
   render() {
     return (
       <div className="App">
@@ -23,4 +27,6 @@ class App extends Component {
   }
 }
 
-export default App;
+const putReduxStateOnProps = (reduxState) => ({ reduxState });
+
+export default connect(putReduxStateOnProps)(App);
