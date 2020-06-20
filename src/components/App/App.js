@@ -3,7 +3,7 @@ import './App.css';
 import { connect } from 'react-redux';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import MovieList from '../MovieList/MovieList';
-import MovieItem from '../MovieItem/MovieItem';
+// import MovieItem from '../MovieItem/MovieItem';
 import Edit from '../Edit/Edit';
 import Details from '../Details/Details';
 

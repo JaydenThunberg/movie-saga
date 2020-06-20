@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
     ORDER BY "movies".title ASC;`;
     pool.query(queryText)
     .then((result) => {
-      console.log('got movies', result.rows)
+      console.log('in GET movies', result.rows)
       res.send(result.rows);
     }) .catch( (error ) =>{
       console.log(error)
