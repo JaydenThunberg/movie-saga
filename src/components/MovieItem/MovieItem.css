@@ -1,0 +1,21 @@
+.movieItems {
+    width: 250px;
+    max-height: 450px ;
+    display: inline-block;
+    flex: wrap;
+    margin: 5px;
+    padding: 15px;
+    background-color: rgb(195, 200, 207);
+    border-radius: 10px;
+    
+}
+
+.movies {
+    max-height: 250;
+    max-width: 200;
+}
+
+.description {
+    height: 125px;
+    overflow-y: auto;
+}

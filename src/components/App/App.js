@@ -16,7 +16,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Lordess of the Reels <span role="img" aria-label="video camera recorder">🎥</span></h1>
+        <header className="header">
+          <h1>Lordess of the Reels <span role="img" aria-label="video camera recorder">🎥</span></h1>
+        </header>
         <Router>
           <Route exact path="/" component={MovieList} />
           <Route path="/details" component={Details} />

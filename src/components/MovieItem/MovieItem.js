@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Detail from '../Details/Details';
+import './MovieItem.css';
 
 class MovieItem extends Component {
     // Renders the entire MovieItem on the DOM
@@ -16,12 +17,14 @@ class MovieItem extends Component {
         const description = this.props.item.description;
         let singlePoster = <img src={poster} alt={title} onClick={() => this.getMovieDetails(this.props.item)}/>
         return (
-            <div className="MovieItem">
+            <div className="movieItems">
                 {/* {console.log(this.props.item)} */}
-                <div>
+                <div className="movies">
                     {title} <br/>
                     {singlePoster} <br/>
+                    <div className="description">
                     {description}
+                    </div>
                     <br/>
                 </div>
             </div>

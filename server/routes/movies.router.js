@@ -6,10 +6,10 @@ const router = express.Router();
 //basic GET route for movieList
 router.get('/', (req, res) => {
     console.log('in GET movies')
-    const queryText= `SELECT * FROM "movies"
-    JOIN "movie_genre" ON "movies".id = "movie_genre".movies_id
-    JOIN "genres" ON "movie_genre".genres_id = "genres".id
-    ORDER BY "movies".title ASC;`;
+    const queryText= `SELECT * FROM movies
+    JOIN movie_genre ON movies.id = movie_genre.movies_id
+    JOIN genres ON movie_genre.genres_id = genres.id
+    ORDER BY movies.title ASC;`;
     pool.query(queryText)
     .then((result) => {
       console.log('in GET movies', result.rows)
