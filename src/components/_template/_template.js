@@ -7,8 +7,8 @@ class _template extends Component {
       <div className="_template">
         <p>_template</p>
       </div>
-    );
-  }
-}
+    );//end return
+  }//end render
+}// end class
 
 export default _template;
