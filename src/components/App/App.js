@@ -19,7 +19,7 @@ class App extends Component {
         <h1>Lordess of the Reels <span role="img" aria-label="video camera recorder">🎥</span></h1>
         <Router>
           <Route exact path="/" component={MovieList} />
-          {/* <Route path="/details" component={Details} /> */}
+          <Route path="/details" component={Details} />
           <Route path="/edit" component={Edit} />
         </Router>
       </div>

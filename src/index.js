@@ -15,19 +15,19 @@ import axios from 'axios';
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('GET_MOVIES', getMovies);
+    // yield takeEvery('GET_DETAILS');
 }
 
 
 function* getMovies() {
     try {
-        const response = yield axios.get('/api/movie');
+        const response = yield axios.get('/api/movies');
         console.log('in getMovies', response.data);
         yield put({ type: 'SET_MOVIES', payload: response.data}); 
     } catch (err) {
         console.log('error in getMovies', err);
     }
 }
-
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
@@ -36,6 +36,15 @@ const sagaMiddleware = createSagaMiddleware();
 const movies = (state = [], action) => {
     switch (action.type) {
         case 'SET_MOVIES':
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
+const movieDetails = (state = {}, action) => {
+    switch (action.type) {
+        case 'GET_DETAILS':
             return action.payload;
         default:
             return state;
@@ -57,6 +66,7 @@ const storeInstance = createStore(
     combineReducers({
         movies,
         genres,
+        movieDetails
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
