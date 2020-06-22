@@ -32,9 +32,9 @@ function* getMovies() {
 function* sendMovieDetails(action) {
     try {
         //send payload state
-        const response = yield axios.put(`/api/movies/${action.payload.id}`, action.payload)
-        console.log('in editMovie', response.data);
-        //yield put
+        yield axios.put(`/api/movies/${action.payload.id}`, (action.payload))
+        // yield put({ type: 'SET_MOVIES'});
+        // console.log('in editMovie');
     } catch (err) {
         console.log('error in editMovie', err);
     }

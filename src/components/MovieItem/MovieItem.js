@@ -22,7 +22,9 @@ class MovieItem extends Component {
                 {/* {console.log(this.props.item)} */}
                 <div className="movies">
                     {title} <br />
+                    <div className="posterRadius">
                     {singlePoster} <br />
+                    </div>
                     <div className="description">
                         {description}
                     </div>

@@ -21,4 +21,20 @@ router.get('/', (req, res) => {
     })
   });
 
+  router.put('/:id', (req, res) => {
+    // let values = [req.body.id, req.body.title, req.body.description ];
+    let queryText = `UPDATE "movies" 
+    SET title = $2 ,
+    description = $3
+    WHERE id= $1;`;
+    pool.query(queryText, [req.body.id, req.body.title, req.body.description])
+        .then(result => {
+            res.send(result.rows);
+        })
+        .catch(error => {
+            console.log('error getting that movie', error)
+            res.sendStatus(500);
+        })
+})
+
 module.exports = router;

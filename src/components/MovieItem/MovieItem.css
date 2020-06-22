@@ -19,3 +19,7 @@
     height: 125px;
     overflow-y: auto;
 }
+
+.posterRadius {
+    border-radius: 5px;
+}
