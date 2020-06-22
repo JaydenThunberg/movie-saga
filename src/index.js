@@ -15,7 +15,7 @@ import axios from 'axios';
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('GET_MOVIES', getMovies);
-    // yield takeEvery('GET_DETAILS');
+    yield takeEvery('NEW_DETAILS', sendMovieDetails)
 }
 
 
@@ -28,6 +28,18 @@ function* getMovies() {
         console.log('error in getMovies', err);
     }
 }
+
+function* sendMovieDetails(action) {
+    try {
+        //send payload state
+        const response = yield axios.put(`/api/movies/${action.payload.id}`, action.payload)
+        console.log('in editMovie', response.data);
+        //yield put
+    } catch (err) {
+        console.log('error in editMovie', err);
+    }
+}
+
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
@@ -46,6 +58,8 @@ const movieDetails = (state = {}, action) => {
     switch (action.type) {
         case 'GET_DETAILS':
             return action.payload;
+        case 'EDIT_DETAILS':
+            return action.payload; 
         default:
             return state;
     }

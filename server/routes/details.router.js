@@ -18,4 +18,19 @@ router.get('/:id', (req, res) => {
         })
 })
 
+// router.put('/:id', (req, res) => {
+//     let id = req.body.id;
+//     let title = req.body.title  ;
+//     let description = req.body.description; 
+//     let queryText = ``;
+//     pool.query(queryText, [id])
+//         .then(result => {
+//             res.send(result.rows);
+//         })
+//         .catch(error => {
+//             console.log('error getting that movie', error)
+//             res.sendStatus(500);
+//         })
+// })
+
 module.exports = router;

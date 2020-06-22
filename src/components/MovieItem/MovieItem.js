@@ -8,24 +8,25 @@ class MovieItem extends Component {
     // Renders the entire MovieItem on the DOM
     getMovieDetails = (id) => {
         console.log('handling detail for:', id);
-        this.props.dispatch({type: 'GET_DETAILS', payload: id});
+        this.props.dispatch({ type: 'GET_DETAILS', payload: id });
         this.props.history.push(`/details/${id.title}`)
     }
+
     render() {
         const poster = this.props.item.poster;
         const title = this.props.item.title;
         const description = this.props.item.description;
-        let singlePoster = <img src={poster} alt={title} onClick={() => this.getMovieDetails(this.props.item)}/>
+        let singlePoster = <img src={poster} alt={title} onClick={() => this.getMovieDetails(this.props.item)} />
         return (
             <div className="movieItems">
                 {/* {console.log(this.props.item)} */}
                 <div className="movies">
-                    {title} <br/>
-                    {singlePoster} <br/>
+                    {title} <br />
+                    {singlePoster} <br />
                     <div className="description">
-                    {description}
+                        {description}
                     </div>
-                    <br/>
+                    <br />
                 </div>
             </div>
         );//end return

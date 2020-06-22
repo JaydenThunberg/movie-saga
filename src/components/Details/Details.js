@@ -11,9 +11,9 @@ class Details extends Component {
 
   editMovie = (id) => {
     console.log('handling detail for:', id);
-    this.props.dispatch({type: 'GET_DETAILS', payload: id});
+    this.props.dispatch({ type: 'GET_DETAILS', payload: id });
     this.props.history.push(`/edit/${id.title}`)
-}
+  }
   goBackToList = () => {
     this.props.history.push('/')
   }//end goBackToList
@@ -26,21 +26,25 @@ class Details extends Component {
     const genreName = this.props.reduxState.movieDetails.name;
     let singlePoster = <img src={poster} alt={title} />
     return (
-      <div className="Details">
-        <span><b>{title}</b></span> 
-        <br/>
-        <br/>
-        <span>{singlePoster}</span> 
-        <br/>
-        <br/>
-        <span><b>Movie Description: </b>{description}</span> 
-        <br/>
-        <br/>
-        <span><b>Genre: </b> {genreName}</span>
-        <br/>
-        <br/>
-        <button onClick={this.goBackToList}>Back to List</button>
-        <button onClick={() => this.editMovie(this.props.reduxState.movieDetails)}>Edit</button>
+      <div className="movieItems">
+        <div className="movies">
+          <span><b>{title}</b></span>
+          <br />
+          <br />
+          <span>{singlePoster}</span>
+          <br />
+          <br />
+          <div className="description">
+            <span><b>Movie Description: </b>{description}</span>
+          </div>
+          <br />
+          <br />
+          <span><b>Genre: </b> {genreName}</span>
+          <br />
+          <br />
+          <button onClick={this.goBackToList}>Back to List</button>
+          <button onClick={() => this.editMovie(this.props.reduxState.movieDetails)}>Edit</button>
+        </div>
       </div>
     );//end return
   }//end render

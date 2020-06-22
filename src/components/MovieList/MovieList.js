@@ -1,6 +1,6 @@
 //this will be a map of the reduxState
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import MovieItem from '../MovieItem/MovieItem';
 
 class MovieList extends Component {
@@ -10,10 +10,10 @@ class MovieList extends Component {
       <div className="MovieList">
         {/* {console.log(this.props.reduxState.movies)} */}
         {this.props.reduxState.movies.map((item) => {
-            return (
-              <MovieItem key={item.title} item={item} history={this.props.history}/>
-            )
-          })}
+          return (
+            <MovieItem key={item.title} item={item} history={this.props.history} />
+          )
+        })}
       </div>
     );//end return
   }//end render
