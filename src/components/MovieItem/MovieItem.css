@@ -3,11 +3,11 @@
     max-height: 450px ;
     display: inline-block;
     flex: wrap;
-    margin: 5px;
+    margin: 25px;
     padding: 15px;
     background-color: rgb(195, 200, 207);
     border-radius: 10px;
-    
+    box-shadow: 12px 12px 10px 1px rgba(100, 100, 221, 0.2);
 }
 
 .movies {

@@ -3,12 +3,12 @@
 }
 
 
-/* .App-header {
+.App-header {
   background-color: #222;
   height: 150px;
   padding: 20px;
   color: white;
-} */
+}
 
 .App-title {
   font-size: 1.5em;
@@ -22,4 +22,6 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
+.header{
+  text-decoration: underline rgba(100, 100, 221, 0.87);
+}
