@@ -34,12 +34,12 @@ class Edit extends Component {
 
   render() {
     return (
-      <div className="Edit">
+      <div className="movieItems">
         {console.log(this.props)}
         <div>
-          <input placeholder={this.props.reduxState.movieDetails.title} onChange={(event) => this.editMovie(event,'title')}></input> <br/>
+          <span>Title: </span><input placeholder={this.props.reduxState.movieDetails.title} onChange={(event) => this.editMovie(event,'title')}></input> <br/>
           <img src={this.props.reduxState.movieDetails.poster} alt={this.props.reduxState.movieDetails.title}/> <br/>
-          <input placeholder={this.props.reduxState.movieDetails.description} onChange={(event) => this.editMovie (event,'description')}></input>
+          <span>Description: </span><input placeholder={this.props.reduxState.movieDetails.description} onChange={(event) => this.editMovie (event,'description')}></input>
         </div>
         <button onClick={this.sendDetails}>Submit</button>
         <button onClick={this.goToDetails}>Cancel</button>
